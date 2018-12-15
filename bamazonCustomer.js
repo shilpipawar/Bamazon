@@ -11,9 +11,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function (err) {
     allProductsforSale();
-    //buyProduct();
     console.log("calling CLeanup");
-
 });
 
 function allProductsforSale() {
@@ -45,27 +43,25 @@ function placeOredre(id, enteredQty, dbQty) {
                     if (error) {
                       console.log("error", error);
                     }
-                    console.log("Order placed successfully!! Thanks you");
+                    console.log("Order placed successfully!!");
+                    getPrice(id);
                   });
-               
-                // var sql = "UPDATE products SET stock_quantity = ? WHERE item_id = ?";
-                // var values = [updateQty, id];
-                // connection.query(sql, [values], function (err, result, fields) {
-                //     if (err) throw err;
-    
-                //     console.log("Qyantity:" + id + " Qty:" + enteredQty);
-    
-                //     console.log("working");
-                // });
-                // console.log("Order Places!!!");
             }
             else {
                 console.log("\nThat's okay ");
             }
-            cleanUp();
         });
 }
 
+function getPrice(item_id){
+    var sql = "select price from products where item_id = ?";
+    var values = item_id;
+    connection.query(sql, [values], function (err, result, fields) {
+        if (err) throw err;
+        console.log("Product price is: $" + result[0].price + "\n Thank you for shopping at Bamazon!! ");
+    });
+    cleanUp();
+}
 function checkProductQuantity(id, quantity) {
     var sql = "select stock_quantity from products where item_id = ?";
     var values = id;
@@ -92,6 +88,7 @@ function validateProductId(name) {
         return name !== '';
     }
 }
+
 function buyProduct() {
     inquirer
         .prompt([
