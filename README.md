@@ -18,11 +18,11 @@
 
 # Features
 
-Bamazon App has 3 features 
+## Bamazon App has 3 features 
 
-# Customer View
-# Manager View
-# Supervisor View
+## 1. Customer View
+## 2. Manager View
+## 3. Supervisor View
 
 ## Customer View -
 - Display all avaialble products - item_id, product_name, department_name, price, stock_quantity 
@@ -41,13 +41,13 @@ Display below option for Manager
 - View Low Inventory
 - Add to Inventory
 - Add New Product
-## 1. If a manager selects View Products for Sale, the app dispalys list every available item: the item IDs, names, prices, and quantities.
+1. If a manager selects View Products for Sale, the app dispalys list every available item: the item IDs, names, prices, and quantities.
 
-## 2.If a manager selects View Low Inventory, then it displays list all items with an inventory count lower than five.
+2. If a manager selects View Low Inventory, then it displays list all items with an inventory count lower than five.
 
-## 3.If a manager selects Add to Inventory, your app should display a prompt that will let the manager "add more" of any item currently in the store.
+3. If a manager selects Add to Inventory, your app should display a prompt that will let the manager "add more" of any item currently in the store.
 
-## 4.If a manager selects Add New Product, it should allow the manager to add a completely new product to the store.
+4. If a manager selects Add New Product, it should allow the manager to add a completely new product to the store.
 
 # Installing
 - package.json has all required dependencies
@@ -71,14 +71,16 @@ const cTable = require('console.table');
 - 
 ```node bamazonCustomer.js```
 - Screen Shot:
-  ![image](https://github.com/shilpipawar/liri-node-app/blob/master/ScreenShots/concert-this.png?raw=true "concert-this")
+  ![image](https://github.com/shilpipawar/Bamazon/blob/master/Screenshots/BamazonCustomer.png "Customer-View1")
+  ![image](https://github.com/shilpipawar/Bamazon/blob/master/Screenshots/BamazonCustomer1.png "Customer-View2")
+  
 
 
 ## 2. Manager View
 - 
 ```node bamazonManager.js```
 - Screen Shot:
-  ![image](https://github.com/shilpipawar/liri-node-app/blob/master/ScreenShots/spotify-this-song.png?raw=true "spotify-this-song")
+  ![image](https://github.com/shilpipawar/Bamazon/blob/master/Screenshots/bamazonManager.png "Manager-View")
 
 ## 3. Supervisor View
   - 
