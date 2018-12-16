@@ -70,13 +70,9 @@ function checkProductQuantity(id, quantity) {
     var values = id;
     connection.query(sql, [values], function (err, result, fields) {
         if (err) throw err;
-
-        console.log("Qyantity:" + result[0].stock_quantity + " Qty:" + quantity);
-
         var dbQty = parseInt(result[0].stock_quantity);
         var enteredQty = parseInt(quantity);
         if (enteredQty <= dbQty) {
-            console.log("Hello");
             placeOredre(id, enteredQty, dbQty);
         }
         console.log("not working");
@@ -110,7 +106,7 @@ function buyProduct() {
             }
         ])
         .then(function (inquirerResponse) {
-            console.log(inquirerResponse.pid + " " + inquirerResponse.quantity);
+            //console.log(inquirerResponse.pid + " " + inquirerResponse.quantity);
             checkProductQuantity(inquirerResponse.pid, inquirerResponse.quantity);
         });
 }
