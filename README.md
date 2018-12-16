@@ -18,8 +18,13 @@
 
 # Features
 
-Bamazon App has 4 features 
+Bamazon App has 3 features 
 
+# Customer View
+# Manager View
+# Supervisor View
+
+## Customer View -
 - Display all avaialble products - item_id, product_name, department_name, price, stock_quantity 
 
 - Request you enter any availble product key and required quantity for purchase
@@ -29,6 +34,20 @@ Bamazon App has 4 features
 - if store does have enough of the product, the customer's order will get placed.
     This means updating the SQL database to reflect the remaining quantity.
     Once the update goes through, show the customer the total cost of their purchase.
+
+## Manager View -
+Display below option for Manager
+- View Products for Sale
+- View Low Inventory
+- Add to Inventory
+- Add New Product
+## 1. If a manager selects View Products for Sale, the app dispalys list every available item: the item IDs, names, prices, and quantities.
+
+## 2.If a manager selects View Low Inventory, then it displays list all items with an inventory count lower than five.
+
+## 3.If a manager selects Add to Inventory, your app should display a prompt that will let the manager "add more" of any item currently in the store.
+
+## 4.If a manager selects Add New Product, it should allow the manager to add a completely new product to the store.
 
 # Installing
 - package.json has all required dependencies
@@ -48,52 +67,26 @@ const cTable = require('console.table');
 ```
 
 #### Usage
-## 1. concert-this 
-- This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
-    * Name of the venue
-    *  Venue location
-    * Date of the Event ("MM/DD/YYYY")
-- command to access the feature for concert-this
-```node liri.js concert-this <artist/band name here>```
+## 1. Customer View 
+- 
+```node bamazonCustomer.js```
 - Screen Shot:
   ![image](https://github.com/shilpipawar/liri-node-app/blob/master/ScreenShots/concert-this.png?raw=true "concert-this")
 
 
-## 2. spotify-this-song
-- This will show the following information about the song in your terminal/bash window
-    * Artist(s)
-    * The song's name
-    * A preview link of the song from Spotify
-    * The album that the song is from
-- command to access the feature for concert-this
-```node liri.js spotify-this-song '<song name here>```
+## 2. Manager View
+- 
+```node bamazonManager.js```
 - Screen Shot:
   ![image](https://github.com/shilpipawar/liri-node-app/blob/master/ScreenShots/spotify-this-song.png?raw=true "spotify-this-song")
 
-## 3. movie-this
-  - This will output the following information to your terminal/bash window:
-      * Title of the movie.
-      * Year the movie came out.
-      * IMDB Rating of the movie.
-      * Rotten Tomatoes Rating of the movie.
-      * Country where the movie was produced.
-      * Language of the movie.
-      * Plot of the movie.
-      * Actors in the movie.
-  - command to access the feature for concert-this
-  ```node liri.js movie-this '<movie name here>'```
+## 3. Supervisor View
+  - 
+  ```node bamazonSupervisor.js'```
 
   - Screen Shot:
   ![image](https://github.com/shilpipawar/liri-node-app/blob/master/ScreenShots/movie-this.png?raw=true "movie-this")
 
-## 4. do-what-it-says
-- Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
-    * It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt.
-    * Edit the text in random.txt to test out the feature for movie-this and concert-this.
-- command to access the feature for concert-this
-```node liri.js do-what-it-says```
- - Screen Shot:
-  ![image](https://github.com/shilpipawar/liri-node-app/blob/master/ScreenShots/do-what-it-says.png?raw=true "do-what-it-says")
 
 ## License
 This project is licensed under the MIT License - see the [L
