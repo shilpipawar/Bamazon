@@ -54,7 +54,38 @@ function addInventory() {
         });
 }
 function addProduct() {
-
+    inquirer
+    .prompt([
+        {
+            type: "input",
+            message: "Insert new Product \nEnter Product name:",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "Insert Quantity:",
+            name: "quantity",
+        },
+        {
+            type: "input",
+            message: "Insert Prise:",
+            name: "price",
+        },
+        {
+            type: "input",
+            message: "Department Name:",
+            name: "dpname",
+        }
+    ])
+    .then(function (response) {
+        var sql = "INSERT INTO products (product_name,department_name,price,stock_quantity)VALUES(?,?,?,?)";
+        connection.query(sql, [response.name, response.dpname,response.price,response.quantity], function (error, results, fields) {
+            if (error) {
+                console.log("error", error);
+            }
+            console.log("Record Inserted!!");
+        });
+    });
 }
 ////////////////////////////////Manager View//////////////////////////////////////////////
 function managerOptions() {
